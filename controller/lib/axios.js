@@ -1,5 +1,6 @@
 const axios = require("axios");
-const MY_TOKEN = "7012762892:AAG7Hk-C6y4nct1AHdPsDCHQexUE7ABbZw0";
+require("dotenv").config();
+const MY_TOKEN = process.env.MY_TOKEN;
 const BASE_URL = `https://api.telegram.org/bot${MY_TOKEN}`;
 
 function getAxiosInstance() {
