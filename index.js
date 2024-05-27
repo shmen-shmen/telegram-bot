@@ -5,13 +5,12 @@ const { handler } = require("./controller/index.js");
 const app = express();
 app.use(express.json());
 app.post("*", async (req, res) => {
-	console.log(req.body);
-	// res.send("hello post");
-	res.send(await handler(req));
+	// console.log("a", req.body);
+	res.send(await handler(req, "POST"));
 });
 app.get("*", async (req, res) => {
-	// res.send("hello get");
-	res.send(await handler(req));
+	// console.log("b", req.body);
+	res.send(await handler(req, "GET"));
 });
 
 app.listen(PORT, function (err) {
